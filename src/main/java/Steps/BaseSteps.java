@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import util.TestProperties;
+
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +23,9 @@ public class BaseSteps {
     protected static String baseUrl;
     public static Properties properties = TestProperties.getInstance().getProperties();
 
+    public static WebDriver getDriver(){
+        return driver;
+    }
 
     @Before
         public static void setUp() throws Exception {
@@ -55,7 +59,8 @@ public class BaseSteps {
 
     @Attachment(type = "image/png", value = "Screenshot")
     public static byte[] takeScreenShot() {
-        return ((TakesScreenshot)BaseSteps.driver).getScreenshotAs(OutputType.BYTES);
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
+
 
 }

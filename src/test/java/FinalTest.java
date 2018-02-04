@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
                 "util.AllureReporter",
         }
 )
-public class CucumberRunner {
+public class FinalTest {
 }

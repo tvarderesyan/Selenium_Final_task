@@ -9,12 +9,13 @@ import ru.yandex.qatools.allure.annotations.Step;
 public class MainSteps extends BaseSteps {
 
     @Step("выбран пункт меню {0}")
-    public void selectMenuItem(String menuItem){
+    public void selectMainMenu(String menuItem){
+
         new MainPage(driver).selectmainMenu(menuItem);
     }
 
-    @Step("выбран вид страхования {0}")
-    public void selectMenuInsurance(String menuItem){
+    @Step("выбран вид товара {0}")
+    public void selectSubMenu(String menuItem){
 
         new MainPage(driver).selectsubMenu(menuItem);
     }

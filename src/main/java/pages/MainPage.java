@@ -12,28 +12,25 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class MainPage {
 
-    @FindBy(xpath = "//DIV[contains(@class,'sbrf-div-list-inner --area bp-area header_more_nav')]")
-    WebElement mainMenu;
+    @FindBy(xpath = "//div[contains(@class,'home-tabs')]")
+    WebElement market;
 
 
-    @FindBy(xpath = "//li[5]//div[contains(@class,'list__item_level_1')]")
-    WebElement subMenu;
+    @FindBy(xpath = "//div[contains(@class,'topmenu i-bem topmenu_js_inited')]")
+    WebElement electronics;
 
     public MainPage(WebDriver driver){
+
         PageFactory.initElements(driver, this);
     }
 
 
     public void selectmainMenu(String menuItem){
-        mainMenu.findElement(By.xpath(".//SPAN[contains(@class,'multiline')]/*[contains(text(),'"+menuItem+"')]")).click();
+        market.findElement(By.xpath(".//a[contains(text(),'"+menuItem+"')]")).click();
     }
 
     public void selectsubMenu(String menuItem){
-        subMenu.findElement(By.xpath(".//a[contains(@class,'kit-link kit-link_color_black alt-menu-list__link alt-menu-list__link_level_1')]")).click();
+        electronics.findElement(By.xpath(".//a[contains(text(),'"+menuItem+"')]")).click();
     }
-
-
-
-
 
 }
